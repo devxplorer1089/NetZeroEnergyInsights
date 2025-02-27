@@ -28,7 +28,7 @@ def generate_visuals(file_path, output_folder="plots"):
     plt.xlabel("Building Type")
     plt.ylabel("Average Energy Consumption (kWh/m²)")
     plt.title("Average Energy Consumption by Building Type")
-    plt.savefig(os.path.join(output_folder, "energy_consumption_trend.png"))
+    plt.savefig(os.path.join(output_folder, "energy_trend_analysis.png"))
     plt.close()
     
     # 2. 📌 Cost-Effective Renovation Measures
@@ -41,7 +41,7 @@ def generate_visuals(file_path, output_folder="plots"):
     plt.xlabel("Renovation Measure")
     plt.ylabel("Average Energy Consumption (kWh/m²)")
     plt.title("Top 10 Most Cost-Effective Renovation Measures")
-    plt.savefig(os.path.join(output_folder, "cost_effective_measures.png"))
+    plt.savefig(os.path.join(output_folder, "best_cost_effective_measures.png"))
     plt.close()
     
     # 3. 📌 Financially Efficient Renovation Measures (Energy Cost Savings per Investment Dollar)
@@ -86,7 +86,7 @@ def generate_visuals(file_path, output_folder="plots"):
     plt.xlabel("Renovation Measure")
     plt.ylabel("Energy Cost Savings per Investment Dollar (€)")
     plt.title("Top 10 Financially Efficient Renovation Measures")
-    plt.savefig(os.path.join(output_folder, "financially_efficient_measures.png"))
+    plt.savefig(os.path.join(output_folder, "top_financial_measures.png"))
     plt.close()
     
     # 4. 📌 Impact of Building Elements on Energy Consumption
@@ -105,7 +105,7 @@ def generate_visuals(file_path, output_folder="plots"):
     plt.xlabel("Building Element")
     plt.ylabel("Correlation with Energy Consumption")
     plt.title("Building Elements with Greatest Impact on Energy Consumption")
-    plt.savefig(os.path.join(output_folder, "building_elements_impact.png"))
+    plt.savefig(os.path.join(output_folder, "building_features_impact.png"))
     plt.close()
     
     # 5. 📌 Energy Efficiency Class Distribution 
@@ -117,7 +117,7 @@ def generate_visuals(file_path, output_folder="plots"):
         plt.xlabel("Energy Efficiency Class")
         plt.ylabel("Count of Buildings")
         plt.title("Distribution of Energy Efficiency Classes")
-        plt.savefig(os.path.join(output_folder, "energy_efficiency_distribution.png"))
+        plt.savefig(os.path.join(output_folder, "efficiency_class_distribution.png"))
         plt.close()
         
     # 6. 📌 Correlation Heatmap #
@@ -136,7 +136,7 @@ def generate_visuals(file_path, output_folder="plots"):
     corr_matrix = df[heatmap_cols].corr()
     sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm")
     plt.title("Correlation Heatmap of Energy & Building Features")
-    plt.savefig(os.path.join(output_folder, "correlation_heatmap.png"))
+    plt.savefig(os.path.join(output_folder, "building_correlation_heatmap.png"))
     plt.close()
     
     # 7. 📌 Geographical Analysis of Energy Consumption 
@@ -148,7 +148,7 @@ def generate_visuals(file_path, output_folder="plots"):
         plt.ylabel("Average Energy Consumption (kWh/m²)")
         plt.title("Average Energy Consumption by Department")
         plt.xticks(rotation=0)
-        plt.savefig(os.path.join(output_folder, "energy_consumption_by_department.png"))
+        plt.savefig(os.path.join(output_folder, "energy_use_by_department.png"))
         plt.close()
         
     # 8. 📌 Renovation Impact: Renovated vs Non-Renovated #
@@ -161,7 +161,7 @@ def generate_visuals(file_path, output_folder="plots"):
     plt.xlabel("Renovated (True = Renovated, False = Not Renovated)")
     plt.ylabel("Energy Consumption (kWh/m²)")
     plt.title("Energy Consumption: Renovated vs Non-Renovated Buildings")
-    plt.savefig(os.path.join(output_folder, "renovation_impact.png"))
+    plt.savefig(os.path.join(output_folder, "renovation_energy_impact.png"))
     plt.close()
     
     print("Visualizations saved in", output_folder)
